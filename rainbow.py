@@ -36,40 +36,40 @@ class Background:
     LIGHTGREY = "\033[47m"
 
 
-def black(msg: str) -> str:
-    return Text.BLACK + msg + RESET
+def black(msg: str, reset=RESET) -> str:
+    return Text.BLACK + msg + reset
 
 
-def red(msg: str) -> str:
-    return Text.RED + msg + RESET
+def red(msg: str, reset=RESET) -> str:
+    return Text.RED + msg + reset
 
 
-def green(msg: str) -> str:
-    return Text.GREEN + msg + RESET
+def green(msg: str, reset=RESET) -> str:
+    return Text.GREEN + msg + reset
 
 
-def orange(msg: str) -> str:
-    return Text.ORANGE + msg + RESET
+def orange(msg: str, reset=RESET) -> str:
+    return Text.ORANGE + msg + reset
 
 
-def blue(msg: str) -> str:
-    return Text.BLUE + msg + RESET
+def blue(msg: str, reset=RESET) -> str:
+    return Text.BLUE + msg + reset
 
 
-def yellow(msg: str) -> str:
-    return Text.YELLOW + msg + RESET
+def yellow(msg: str, reset=RESET) -> str:
+    return Text.YELLOW + msg + reset
 
 
-def purple(msg: str) -> str:
-    return Text.PURPLE + msg + RESET
+def purple(msg: str, reset=RESET) -> str:
+    return Text.PURPLE + msg + reset
 
 
-def cyan(msg: str) -> str:
-    return Text.CYAN + msg + RESET
+def cyan(msg: str, reset=RESET) -> str:
+    return Text.CYAN + msg + reset
 
 
-def lightgrey(msg: str) -> str:
-    return Text.LIGHTGREY + msg + RESET
+def lightgrey(msg: str, reset=RESET) -> str:
+    return Text.LIGHTGREY + msg + reset
 
 
 def print_error(msg: str) -> None:
