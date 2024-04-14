@@ -26,14 +26,9 @@ def stepped_list_reverse(fwd: list[N]) -> list[N]:
                 rev.insert(index + 1, current - item)
             elif item > current:
                 next_ = rev[index + 1]
-                if next_ + current <= item:
-                    print("merge")
-                    rev[index] = next_ + current
-                    del rev[index + 1]
-                elif next_ + current > item:
-                    print("split + merge")
-                    rev[index] = item
-                    rev[index + 1] = next_ + current - item
+                print("merge")
+                rev[index] = next_ + current
+                del rev[index + 1]
             print(f"{fwd=} {rev=}")
             current = rev[index]
     return rev
@@ -43,6 +38,7 @@ def main() -> None:
     forward_list = [5, 7, 1]
     reverse_list = stepped_list_reverse(forward_list)
     assert_lists_reversed(forward_list, reverse_list)
+    print(80*"*")
     forward_list = [1, 1, 4, 3]
     reverse_list = stepped_list_reverse(forward_list)
     assert_lists_reversed(forward_list, reverse_list)
