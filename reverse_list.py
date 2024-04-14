@@ -38,7 +38,7 @@ def main() -> None:
     forward_list = [5, 7, 1]
     reverse_list = stepped_list_reverse(forward_list)
     assert_lists_reversed(forward_list, reverse_list)
-    print(80*"*")
+    print(80 * "*")
     forward_list = [1, 1, 4, 3]
     reverse_list = stepped_list_reverse(forward_list)
     assert_lists_reversed(forward_list, reverse_list)
