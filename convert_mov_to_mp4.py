@@ -22,6 +22,8 @@ def convert_mov_to_mp4(mov_file, mp4_file):
         "ffmpeg",
         "-i",
         mov_file,
+        "-s",
+        "720x480",
         "-c:v",
         "libx264",
         "-crf",
