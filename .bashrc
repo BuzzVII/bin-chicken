@@ -27,8 +27,27 @@ function gitbranch()
 {
     BRANCH=$(git branch 2>/dev/null)
     if [[ $? == 0 ]] then
-        echo -en "(\e[36m$BRANCH\e[0m)"
+        echo -n "("
+        if  [[ -n $(git status -s) ]]; then
+            echo -en "\e[45m"
+        else
+            BRANCH=$(echo -en "$BRANCH" | sed -e's/^* //')
+        fi
+        echo -en "\e[36m$BRANCH\e[0m)"
     fi
+
+}
+
+
+function truncateword()
+{
+    WORD=$1
+    LEN=$2
+    WORDLEN=$(echo -en "$WORD" | wc -c)
+    if [[ WORDLEN -ge LEN ]]; then
+        WORD="..."$(echo -en "$WORD" | cut -b-$LEN --complement)
+    fi
+    echo -en "$WORD"
 }
 
 alias ls='ls --color=auto'
@@ -38,4 +57,4 @@ alias grep='grep --color=auto'
 alias rmr='rm -r'
 
 PROMPT_COMMAND='ESTATUS=$(exitstatus)'
-PS1='\[$(tput sc; tput cuf $((COLUMNS - 5)))\A$(tput rc)\][\u@\h $ESTATUS]$(gitbranch)\n$(pwd)$ '
+PS1='\[$(tput sc; tput cuf $((COLUMNS - 5)))\A$(tput rc)\][\u@\h $ESTATUS]$(gitbranch)\n$(truncateword $PWD 30 )$ '
