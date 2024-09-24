@@ -54,3 +54,4 @@ colorscheme torte
 
 map <leader>t :term<CR>
 map <leader>h :noh<CR>
+map <leader>w :set list<CR>
