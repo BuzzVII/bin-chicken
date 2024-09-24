@@ -1,22 +1,26 @@
-call plug#begin()
+" Uncomment for plugins you want to use
+"
+" call plug#begin()
+"
+" Plug 'neoclide/coc.nvim',{'branch': 'release'}
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'github/copilot.vim'
+" Plug 'jreybert/vimagit'
+"
+" call plug#end()
+"
+" nnoremap <leader>n :NERDTreeToggle<CR>
 
-Plug 'neoclide/coc.nvim',{'branch': 'release'}
-Plug 'mattn/vim-lsp-settings'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'github/copilot.vim'
+let mapleader = ' '
 
-call plug#end()
-
-nnoremap <leader>n :NERDTreeToggle<CR>
-
-" might not be needed if .vimrc exists?
 set nocompatible
 syntax on
 
@@ -39,10 +43,14 @@ set ignorecase
 set showmatch
 
 set autoindent
-"set tildeop
-filetype plugin indent on
+" set tildeop
+" filetype plugin indent on
 
-set spell
+" set spell
 
-set re=0 " for preventing timeout during tsx syntax highlighting
+" set re=0 " for preventing timeout during tsx syntax highlighting
 colorscheme torte
+" colorscheme pablo
+
+map <leader>t :term<CR>
+map <leader>h :noh<CR>
