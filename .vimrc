@@ -61,3 +61,4 @@ map <leader>m :make<CR>
 map <leader>c :make %<CR>
 map <leader>h :noh<CR>
 map <leader>w :set list<CR>
+map <leader>t :%s/ \+$//gc<CR>
