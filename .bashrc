@@ -57,4 +57,4 @@ alias grep='grep --color=auto'
 alias rmr='rm -r'
 
 PROMPT_COMMAND='ESTATUS=$(exitstatus)'
-PS1='\[$(tput sc; tput cuf $((COLUMNS - 5)))\A$(tput rc)\][\u@\h $ESTATUS]$(gitbranch)\n$(truncateword $PWD 30 )$ '
+PS1='\[$(tput sc; tput cuf $((COLUMNS - 5)))\A$(tput rc)\][\u@\h $ESTATUS]$(gitbranch)\n\e[37m$(truncateword $PWD 30 )\e[1;33m$\e[0m '
