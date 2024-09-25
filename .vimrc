@@ -21,6 +21,7 @@
 
 let mapleader = ' '
 
+" turn of vi compatability
 set nocompatible
 syntax on
 
@@ -43,6 +44,9 @@ set ignorecase
 set showmatch
 
 set autoindent
+
+" Save when running make
+set autowrite
 " set tildeop
 " filetype plugin indent on
 
@@ -53,5 +57,7 @@ colorscheme torte
 " colorscheme pablo
 
 map <leader>t :term<CR>
+map <leader>m :make<CR>
+map <leader>c :make %<CR>
 map <leader>h :noh<CR>
 map <leader>w :set list<CR>
