@@ -25,13 +25,13 @@ function exitstatus()
 
 function gitbranch()
 {
-    BRANCH=$(git branch 2>/dev/null)
+    BRANCH=$(git branch 2>/dev/null | head -n1 )
     if [[ $? == 0 ]] then
         echo -n "("
         if  [[ -n $(git status -s) ]]; then
             echo -en "\e[45m"
         else
-            BRANCH=$(echo -en "$BRANCH" | sed -e's/^* //')
+            BRANCH=$(echo -en "$BRANCH" | head -n1 | sed -e's/^* //')
         fi
         echo -en "\e[36m$BRANCH\e[0m)"
     fi
