@@ -62,3 +62,10 @@ map <leader>c :make %<CR>
 map <leader>h :noh<CR>
 map <leader>w :set list<CR>
 map <leader>t :%s/ \+$//gc<CR>
+map <leader>f gggqG
+
+set formatprg=ruff\ format\ -
+set makeprg=ruff\ check\ %
+" TODO: map key to change make program to mypy on file and in project
+" set makeprg=mypy\ %
+" set makeprg=mypy\ .
