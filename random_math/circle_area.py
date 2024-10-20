@@ -10,7 +10,7 @@ x1 = math.cos(theta_1)
 x2 = math.cos(theta_2)
 
 
-# integrate in rectangle coordinates, take the upper quadrant of the 
+# integrate in rectangle coordinates, take the upper quadrant of the
 # circle and integrate form x2 to x1. y = sqrt(r**2 - x**2)
 
 x = sympy.Symbol('x')
@@ -31,7 +31,7 @@ print(area)
 print(3 * math.pi)
 
 
-# Double integral in polar coordinates. Integrate from 0 to theta_1 and 
+# Double integral in polar coordinates. Integrate from 0 to theta_1 and
 # subtract 0 to theta_2 and the vertical line to r along the radius.
 # The vertical line can be written as r = c/(sin(theta)) where c is the x
 # value for the vertical line.
