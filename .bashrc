@@ -43,9 +43,10 @@ function truncateword()
 {
     WORD=$1
     LEN=$2
+    DLEN=$(awk "BEGIN { d= 2*$LEN; print d}")
     WORDLEN=$(echo -en "$WORD" | wc -c)
-    if [[ WORDLEN -ge LEN ]]; then
-        WORD="..."$(echo -en "$WORD" | cut -b-$LEN --complement)
+    if [[ WORDLEN -ge DLEN ]]; then
+        WORD=$(echo -en "$WORD" | head -c$LEN )"..."$(echo -en "$WORD" | tail -c$LEN)
     fi
     echo -en "$WORD"
 }
@@ -57,5 +58,6 @@ alias grep='grep --color=auto'
 alias rmr='rm -r'
 
 PROMPT_COMMAND='ESTATUS=$(exitstatus)'
-PS1='$(tput sc; tput cuf $((COLUMNS - 5)))\A$(tput rc)\]\[[\u@\h $ESTATUS]$(gitbranch)\n\[\e[1;37m\]$(truncateword $PWD 30 )\[\e[1;33m\]$\[\e[0m\] '
+# PS1='$(tput sc; tput cuf $((columns - 5)))\a$(tput rc)\]\[[\u@\h $ESTATUS]$(gitbranch)\n\[\e[1;37m\]$(truncateword $PWD 30 )\[\e[1;33m\]$\[\e[0m\] '
+PS1='[\u@\h $ESTATUS]$(gitbranch)\[\n\e[1;37m\]$(truncateword $PWD 10 )\[\e[1;33m\]$\[\e[0m\] '
 
