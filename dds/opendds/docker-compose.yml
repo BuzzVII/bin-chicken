@@ -1,0 +1,4 @@
+services:
+  opendds-subscriber:
+    build: .
+    network_mode: host
