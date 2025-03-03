@@ -10,3 +10,13 @@ RUN uv venv
 RUN uv pip install colcon-common-extensions vcstool
 RUN uv run vcs import src < fastdds.repos
 RUN uv run colcon build --packages-up-to fastdds
+
+WORKDIR /Fast-DDS-python
+RUN wget https://raw.githubusercontent.com/eProsima/Fast-DDS-python/main/fastdds_python.repos
+RUN mkdir src
+RUN uv venv
+RUN uv pip install colcon-common-extensions vcstool
+RUN uv run vcs import src < fastdds_python.repos
+RUN uv run colcon build
+
+
