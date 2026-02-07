@@ -1,4 +1,0 @@
-services:
-  cyclone-subscriber:
-    build: .
-    network_mode: host
